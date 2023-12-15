@@ -26,7 +26,7 @@
         <param name="rainbow_period" value="5"/>
         <!-- events effects table -->
         <rosparam param="notify" if="$(arg led_notify)">
-            startup: { r: 255, g: 255, b: 255 }
+            startup: { effect: rainbow_fill }
             connected: { effect: rainbow }
             disconnected: { effect: blink, r: 255, g: 50, b: 50 }
             acro: { r: 245, g: 155, b: 0 }
