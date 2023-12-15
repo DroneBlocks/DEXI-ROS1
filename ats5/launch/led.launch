@@ -2,7 +2,7 @@
     <arg name="ws281x" default="true"/>
     <arg name="led_effect" default="true"/>
     <arg name="led_notify" default="true"/>
-    <arg name="led_count" default="72"/>
+    <arg name="led_count" default="10"/>
     <arg name="gpio_pin" default="21"/>
 
     <arg name="simulator" default="false"/>
@@ -19,7 +19,7 @@
     </node>
 
     <!-- high level led effects control, events notification with leds -->
-    <node pkg="clover" name="led_effect" type="led" clear_params="true" output="screen" if="$(arg led_effect)">
+    <node pkg="ats5" name="led_effect" type="led" clear_params="true" output="screen" if="$(arg led_effect)">
         <param name="led" value="led"/>
         <param name="blink_rate" value="2"/>
         <param name="fade_period" value="0.5"/>
