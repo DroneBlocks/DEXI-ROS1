@@ -1,0 +1,24 @@
+<launch>
+    <arg name="main_camera" default="true" />
+    <arg name="web_video_server" default="true" />
+    <arg name="led" default="true" />
+    <arg name="rosbridge" default="true" />
+
+
+    <!-- main camera -->
+    <include file="$(find ats5)/launch/camera.launch" if="$(arg main_camera)">
+    </include>
+
+    <!-- web video server -->
+    <node name="web_video_server" pkg="web_video_server" type="web_video_server" if="$(arg web_video_server)" required="false" respawn="true" respawn_delay="5">
+        <param name="default_stream_type" value="ros_compressed"/>
+        <param name="publish_rate" value="1.0"/>
+    </node>
+
+    <!-- rosbridge server -->
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" if="$(eval rosbridge)"/>
+
+    <!-- led strip -->
+    <include file="$(find ats5)/launch/led.launch" if="$(arg led)">
+    </include>
+</launch>
