@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(ats5)
+project(dexi)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -124,7 +124,7 @@ add_executable(led src/led.cpp)
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/ats-5.cpp
+#   src/${PROJECT_NAME}/dexi.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -135,7 +135,7 @@ add_executable(led src/led.cpp)
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/ats-5_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/1_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -199,7 +199,7 @@ target_link_libraries(led
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_ats-5.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_dexi.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

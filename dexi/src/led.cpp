@@ -15,7 +15,7 @@
 #include <vector>
 #include <boost/algorithm/string.hpp>
 
-#include <ats5/SetLEDEffect.h>
+#include <dexi/SetLEDEffect.h>
 #include <led_msgs/SetLEDs.h>
 #include <led_msgs/LEDState.h>
 #include <led_msgs/LEDStateArray.h>
@@ -24,7 +24,7 @@
 //#include <mavros_msgs/State.h>
 #include <rosgraph_msgs/Log.h>
 
-ats5::SetLEDEffect::Request current_effect;
+dexi::SetLEDEffect::Request current_effect;
 int led_count;
 ros::Timer timer;
 ros::Time start_time;
@@ -144,7 +144,7 @@ void proceed(const ros::TimerEvent& event)
 	}
 }
 
-bool setEffect(ats5::SetLEDEffect::Request& req, ats5::SetLEDEffect::Response& res)
+bool setEffect(dexi::SetLEDEffect::Request& req, dexi::SetLEDEffect::Response& res)
 {
 	res.success = true;
 
@@ -238,7 +238,7 @@ void notify(const std::string& event)
 	    ros::param::has("~notify/" + event + "/g") ||
 	    ros::param::has("~notify/" + event + "/b")) {
 		ROS_INFO_THROTTLE(5, "led: notify %s", event.c_str());
-		ats5::SetLEDEffect effect;
+		dexi::SetLEDEffect effect;
 		effect.request.effect = ros::param::param("~notify/" + event + "/effect", std::string(""));
 		effect.request.r = ros::param::param("~notify/" + event + "/r", 0);
 		effect.request.g = ros::param::param("~notify/" + event + "/g", 0);

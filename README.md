@@ -1,6 +1,7 @@
-# ATS-5
+# DEXI
 
 ## Docker for local development
+
 docker run -it --rm -v ${PWD}:/root/ros_ws/src ros:noetic
 
 cd ~/ros_ws
@@ -20,9 +21,10 @@ catkin_make
 
 source devel/setup.bash
 
-roslaunch ats5 led.launch
+roslaunch dexi led.launch
 
 ### Possible dependencies
+
 sudo apt install libxmlrpcpp-dev
 
 sudo apt install librosconsole-dev
@@ -43,5 +45,6 @@ sudo apt install ros-noetic-web-video-server
 rosrun web_video-server web_video_server
 http://n.n.n.n:8080
 
-## nginx for web 
-docker run -it --rm -d -p 80:80 --name web -v ~/ats5_ws/src/ats-5/ats5/www:/usr/share/nginx/html nginx
+## nginx for web
+
+docker run -it --rm -d -p 80:80 --name web -v ~/ros_ws/src/dexi/dexi/www:/usr/share/nginx/html nginx

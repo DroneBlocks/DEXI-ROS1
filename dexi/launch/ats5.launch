@@ -6,7 +6,7 @@
 
 
     <!-- main camera -->
-    <include file="$(find ats5)/launch/camera.launch" if="$(arg main_camera)">
+    <include file="$(find dexi)/launch/camera.launch" if="$(arg main_camera)">
     </include>
 
     <!-- web video server -->
@@ -19,6 +19,6 @@
     <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" if="$(eval rosbridge)"/>
 
     <!-- led strip -->
-    <include file="$(find ats5)/launch/led.launch" if="$(arg led)">
+    <include file="$(find dexi)/launch/led.launch" if="$(arg led)">
     </include>
 </launch>
