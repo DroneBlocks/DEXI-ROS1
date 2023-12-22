@@ -13,6 +13,8 @@ sudo apt update
 cd ~/ros_ws/src
 git clone https://github.com/copterexpress/ros_led
 
+## Build
+
 cd ..
 
 rosdep install --from-paths src --ignore-src -r -y
@@ -23,27 +25,28 @@ source devel/setup.bash
 
 roslaunch dexi led.launch
 
-### Possible dependencies
-
-sudo apt install libxmlrpcpp-dev
-
-sudo apt install librosconsole-dev
-
 ## Test LEDs
+
+Make sure to set permissions for LED control:
+sudo chown root:root $(catkin_find ws281x ws281x_node)
+sudo chmod +s $(catkin_find ws281x ws281x_node)
 
 rosservice call /led/set_effect "{effect: 'rainbow'}"
 rosservice call /led/set_effect "{effect: 'rainbow_fill'}"
 
-## Camera Config
+## Camera & Web Video Setup
 
-sudo apt install ros-noetic-cv-camera
-rosrun cv_camera cv_camera_node
+1. sudo apt install libxmlrpcpp-dev
+2. sudo apt install librosconsole-dev
+3. Add start_x=1 to /boot/firmware/config.txt and reboot
+4. Make waitfile executable: chmod +x ~/ros_ws/src/dexi/dexi/src/waitfile 
+5. Test camera: rosrun cv_camera cv_camera_node
+6. Test web video: rosrun web_video_server web_video_server
+7. Access here: http://n.n.n.n:8080
 
-## Web Video
+## Run all DEXI nodes
 
-sudo apt install ros-noetic-web-video-server
-rosrun web_video-server web_video_server
-http://n.n.n.n:8080
+roslaunch dexi dexi.launch
 
 ## nginx for web
 
