@@ -52,6 +52,10 @@
   <depend>roscpp</depend>
   <depend>rospy</depend>
   <depend>led_msgs</depend>
+  <depend>image_proc</depend>
+  <depend>rosbridge_server</depend>
+  <depend>web_video_server</depend>
+  <depend>cv_camera</depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
