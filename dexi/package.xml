@@ -56,6 +56,7 @@
   <depend>rosbridge_server</depend>
   <depend>web_video_server</depend>
   <depend>cv_camera</depend>
+  <depend>nodelet</depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
