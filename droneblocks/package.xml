@@ -1,29 +1,18 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>dexi</name>
-  <version>0.0.1</version>
-  <description>The DEXI drone package</description>
-
-  <maintainer email="db@droneblocks.io">db@droneblocks.io</maintainer>
-
-
-  <!-- One license tag required, multiple allowed, one license per tag -->
-  <!-- Commonly used license strings: -->
-  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
+  <name>droneblocks</name>
+  <version>0.24.0</version>
+  <description>DroneBlocks programming support for DEXI</description>
+  <maintainer email="db@droneblocks.io">Dennis Baldwin</maintainer>
   <license>MIT</license>
-
 
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
-  <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/dexi</url> -->
-
+  <url type="repository">https://github.com/DroneBlocks/dexi</url>
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->
   <!-- Authors do not have to be maintainers, but could be -->
-  <!-- Example: -->
-  <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
-
+  <author email="okalachev@gmail.com">Oleg Kalachev</author>
 
   <!-- The *depend tags are used to specify dependencies -->
   <!-- Dependencies can be catkin packages or system dependencies -->
@@ -49,14 +38,7 @@
 
   <depend>message_generation</depend>
   <depend>message_runtime</depend>
-  <depend>roscpp</depend>
   <depend>rospy</depend>
-  <depend>led_msgs</depend>
-  <depend>image_proc</depend>
-  <depend>rosbridge_server</depend>
-  <depend>web_video_server</depend>
-  <depend>cv_camera</depend>
-  <depend>nodelet</depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

@@ -48,6 +48,9 @@ rosservice call /led/set_effect "{effect: 'rainbow_fill'}"
 
 roslaunch dexi dexi.launch
 
-## nginx for web
+## nginx for topic viewer
 
 docker run -it --rm -d -p 80:80 --name web -v ~/ros_ws/src/dexi/dexi/www:/usr/share/nginx/html nginx
+
+## nginx for DroneBlocks
+docker run -it --rm -d -p 80:80 --name droneblocks -v ~/ros_ws/src/dexi/droneblocks/www:/usr/share/nginx/html nginx

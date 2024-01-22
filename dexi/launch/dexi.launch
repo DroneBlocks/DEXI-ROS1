@@ -3,7 +3,7 @@
     <arg name="web_video_server" default="true" />
     <arg name="led" default="true" />
     <arg name="rosbridge" default="true" />
-
+    <arg name="droneblocks" default="true"/>
 
     <!-- main camera -->
     <include file="$(find dexi)/launch/camera.launch" if="$(arg main_camera)">
@@ -16,9 +16,11 @@
     </node>
 
     <!-- rosbridge server -->
-    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" if="$(eval rosbridge)"/>
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" if="$(eval rosbridge)" />
 
     <!-- led strip -->
-    <include file="$(find dexi)/launch/led.launch" if="$(arg led)">
-    </include>
+    <include file="$(find dexi)/launch/led.launch" if="$(arg led)" />
+
+    <!-- DroneBlocks -->
+    <node name="droneblocks" pkg="droneblocks" type="droneblocks" output="screen" if="$(arg droneblocks)"/>
 </launch>
